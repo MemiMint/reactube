@@ -1,17 +1,30 @@
 name: "vercel-deploy"
 on: [push]
 jobs:
-  deploy-to-vercel:
+  checkout-and-setup:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+  install-dependencies:
+    runs-on: ubuntu-latest
+    steps:
       - name: Install Packages
-        run: yarn
-      - name: Run ESLint
-        run: yarn run lint
-      - name: Run Test Script
-        run: yarn run test
+        uses: yarn
+  run-eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run linter
+        uses: yarn run lint
+  unit-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run unit tests
+        uses: yarn run test
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == "refs/heads/main"
+    steps:
       - name: Bundle Package
-        run: yarn run build
+        uses: yarn run build
