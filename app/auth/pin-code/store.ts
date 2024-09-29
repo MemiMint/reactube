@@ -1,18 +1,18 @@
 import { makeObservable, observable, action } from "mobx";
 
 class PinCodeStore {
-    public pin: string = "";
+  public pin: string = "";
 
-    constructor() {
-        makeObservable(this, {
-            pin: observable,
-            updatePin: action
-        });
-    }
+  constructor() {
+    makeObservable(this, {
+      pin: observable,
+      updatePin: action,
+    });
+  }
 
-    public updatePin(value: string) {
-        this.pin = value;
-    }
+  public updatePin(value: string) {
+    this.pin = value;
+  }
 }
 
 const pinInputStore = new PinCodeStore();
