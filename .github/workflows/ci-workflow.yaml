@@ -18,9 +18,11 @@ jobs:
     steps:
       - name: run linter
         run: yarn run lint
+        working-directory: ./reactube
 
   unit-testing:
     runs-on: ubuntu-latest
     steps:
       - name: run unit tests
         run: yarn run test
+        working-directory: ./reactube
