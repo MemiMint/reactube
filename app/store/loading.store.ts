@@ -1,18 +1,18 @@
 import { makeObservable, observable, action } from "mobx";
 
 class LoadingStore {
-    public loading: boolean = false;
+  public loading: boolean = false;
 
-    constructor() {
-        makeObservable(this, {
-            loading: observable,
-            toggleLoading: action
-        })
-    }
+  constructor() {
+    makeObservable(this, {
+      loading: observable,
+      toggleLoading: action,
+    });
+  }
 
-    public toggleLoading(): void {
-        this.loading = !this.loading;
-    }
+  public toggleLoading(): void {
+    this.loading = !this.loading;
+  }
 }
 
 const loadingStore = new LoadingStore();
