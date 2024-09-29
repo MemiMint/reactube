@@ -1,28 +1,15 @@
 name: "CI Workflow"
 on: [push]
 jobs:
-  checkout-and-setup:
+  continous-integration:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
       - uses: actions/setup-node@v2
-  install-dependencies:
-    runs-on: ubuntu-latest
-    steps:
       - name: Install Packages
-        run: yarn install
-
-  run-eslint:
-    runs-on: ubuntu-latest
-    steps:
-      - name: run linter
+        run: yarn
+      - name: Run ESLint
         run: yarn run lint
-        working-directory: ./reactube
-
-  unit-testing:
-    runs-on: ubuntu-latest
-    steps:
-      - name: run unit tests
+      - name: Run Test Script
         run: yarn run test
-        working-directory: ./reactube
