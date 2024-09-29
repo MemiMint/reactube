@@ -1,0 +1,8 @@
+name: "unit-testing"
+on: [push]
+jobs:
+  unit-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run unit tests
+        uses: yarn run test

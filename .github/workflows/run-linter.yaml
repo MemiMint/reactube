@@ -1,0 +1,8 @@
+name: "run-linter"
+on: [push]
+jobs:
+  run-eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run linter
+        uses: yarn run lint
