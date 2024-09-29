@@ -1,6 +1,5 @@
 "use client";
 
-import { FC } from "react";
 import { observer } from "mobx-react-lite";
 import NextLink from "next/link";
 import { Logo } from "@/app/libs/shared/ui/logo";
@@ -19,7 +18,7 @@ import { MdEmail, MdPerson } from "react-icons/md";
 import signUpStore from "./store";
 import loadingStore from "@/app/store/loading.store";
 
-const Page: FC = observer(() => {
+const Page = observer(() => {
   const toast = useToast();
 
   const onSignUp = () => {

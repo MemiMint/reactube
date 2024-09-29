@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC } from "react";
+import React from "react";
 import { observer } from "mobx-react-lite";
 import {
   Box,
@@ -16,7 +16,7 @@ import { FaLock } from "react-icons/fa";
 import pinCodeStore from "./store";
 import loadingStore from "@/app/store/loading.store";
 
-export const Page: FC = observer(() => {
+export const Page = observer(() => {
   const toast = useToast();
 
   const onChange = async () => {

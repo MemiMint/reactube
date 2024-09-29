@@ -1,0 +1,17 @@
+name: "vercel-deploy"
+on: [push]
+jobs:
+  deploy-to-vercel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: Install Packages
+        run: yarn
+      - name: Run ESLint
+        run: yarn run lint
+      - name: Run Test Script
+        run: yarn run test
+      - name: Bundle Package
+        run: yarn run build

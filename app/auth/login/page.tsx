@@ -1,6 +1,5 @@
 "use client";
 
-import { FC } from "react";
 import NextLink from "next/link";
 import { observer } from "mobx-react-lite";
 import { Logo } from "@/app/libs/shared/ui/logo";
@@ -12,7 +11,7 @@ import loadingStore from "@/app/store/loading.store";
 import { Link as ChakraLink } from "@chakra-ui/next-js";
 import { mockLogin } from "@/app/mock/auth.mock";
 
-const Page: FC = observer(() => {
+const Page = observer(() => {
   const onLogin = async (): Promise<void> => {
     loadingStore.toggleLoading();
 

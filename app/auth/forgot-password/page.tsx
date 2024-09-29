@@ -1,6 +1,6 @@
 "use client";
 
-import React, { FC } from "react";
+import React from "react";
 import { observer } from "mobx-react-lite";
 import { Box, Avatar, Heading, Text, Button, useToast } from "@chakra-ui/react";
 import { FaLock } from "react-icons/fa";
@@ -8,7 +8,7 @@ import { Input } from "@/app/libs/shared/ui/input";
 import forgotPasswordStore from "./store";
 import loadingStore from "@/app/store/loading.store";
 
-export const Page: FC = observer(() => {
+export const Page = observer(() => {
   const toast = useToast();
 
   const onClick = async () => {
