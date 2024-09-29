@@ -5,14 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install Packages
-        uses: yarn
+        run: yarn install
+
   run-eslint:
     runs-on: ubuntu-latest
     steps:
       - name: run linter
-        uses: yarn run lint
+        run: yarn run lint
+
   unit-testing:
     runs-on: ubuntu-latest
     steps:
       - name: run unit tests
-        uses: yarn run test
+        run: yarn run test
