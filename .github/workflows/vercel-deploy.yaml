@@ -1,8 +1,11 @@
-name: "vercel-deploy"
-on: [push]
+name: "Deploy to Vercel"
+on:
+  push:
+    branches:
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    if: github.ref == "refs/heads/main"
     steps:
-      - uses: yarn run build
+      - name: Bundle Package
+        uses: yarn run build

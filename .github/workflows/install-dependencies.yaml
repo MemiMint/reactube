@@ -1,7 +1,0 @@
-name: "install-dependencies"
-on: [push]
-jobs:
-  install-dependencies:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: yarn

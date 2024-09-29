@@ -1,0 +1,18 @@
+name: "CI Workflow"
+on: [push]
+jobs:
+  install-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Packages
+        uses: yarn
+  run-eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run linter
+        uses: yarn run lint
+  unit-testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run unit tests
+        uses: yarn run test
