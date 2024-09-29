@@ -4,5 +4,4 @@ jobs:
   unit-testing:
     runs-on: ubuntu-latest
     steps:
-      - name: run unit tests
-        uses: yarn run test
+      - uses: yarn run test

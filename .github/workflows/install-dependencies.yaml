@@ -4,5 +4,4 @@ jobs:
   install-dependencies:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Packages
-        uses: yarn
+      - uses: yarn

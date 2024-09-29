@@ -5,5 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == "refs/heads/main"
     steps:
-      - name: Bundle Package
-        uses: yarn run build
+      - uses: yarn run build
