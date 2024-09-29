@@ -8,7 +8,7 @@ import { Input } from "@/app/libs/shared/ui/input";
 import forgotPasswordStore from "./store";
 import loadingStore from "@/app/store/loading.store";
 
-export const Page = observer(() => {
+const Page = observer(() => {
   const toast = useToast();
 
   const onClick = async () => {
