@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Bundle Package
-        uses: yarn run build
+        run: yarn run build
