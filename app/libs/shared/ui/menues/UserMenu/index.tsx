@@ -1,11 +1,8 @@
 "use client";
 
-import { Menu, MenuButton, MenuList, MenuItem, MenuDivider, useMenu } from "@chakra-ui/menu";
-import { Avatar } from "@chakra-ui/avatar";
-import { Text, Heading } from "@chakra-ui/react";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/menu";
+import { Text } from "@chakra-ui/react";
 import React from "react";
-
-//test
 
 type UserMenuProps = {
   children?: React.ReactNode;
