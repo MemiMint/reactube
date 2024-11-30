@@ -18,12 +18,12 @@ export const Logo: FC<LogoProps> = ({
       <MdVideoLibrary color={color === "primary" ? "#F8CA15" : "black"} size={size} />
       {href ? (
         <Link href={href}>
-          <Heading as='h1' size='2xl'>
+          <Heading as='h1' fontSize={size}>
             {title || ""}
           </Heading>
         </Link>
       ) : (
-        <Heading as='h1' size='lg'>
+        <Heading as='h1' fontSize={size}>
           {title || ""}
         </Heading>
       )}

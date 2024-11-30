@@ -9,7 +9,7 @@ export default function Home() {
     <Box>
       <Box width='100vw' p={2}>
         <Flex mt={4} flex={1} alignItems='center' justifyContent='center'>
-          <Logo title='Reactube' />
+          <Logo size={25} title='Reactube' />
         </Flex>
       </Box>
       <Box

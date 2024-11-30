@@ -1,19 +1,43 @@
-import { Suspense } from "react";
-import { MockUser } from "./mock/user.types";
+//"use client";
 
-export default async function Page() {
-  const request = await fetch("https://dummyjson.com/users", {
-    method: "GET",
-    headers: { "Content-Type": "application/json" },
-  });
+import { Box, Wrap, WrapItem } from "@chakra-ui/react";
+import { OverviewSidebar } from "@/app/libs/shared/ui/sidebars/OverviewSidebar";
+import { TopBar } from "@/app/libs/shared/ui/topbar";
+import { VideoCard } from "./components/VideoCard";
 
-  const response = await request.json();
-
-  const user: MockUser[] = response;
-
+export default function page() {
   return (
-    <Suspense fallback={<p>Loading...</p>}>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
-    </Suspense>
+    <Box display='flex' w='100vw'>
+      <TopBar />
+      <OverviewSidebar />
+      <Box ml={6} mt={20} w='100%' height='200vh' p={4}>
+        <Wrap spacing={2}>
+          <WrapItem>
+            <VideoCard />
+          </WrapItem>
+          <WrapItem>
+            <VideoCard />
+          </WrapItem>
+          <WrapItem>
+            <VideoCard />
+          </WrapItem>
+          <WrapItem>
+            <VideoCard />
+          </WrapItem>
+          <WrapItem>
+            <VideoCard />
+          </WrapItem>
+          <WrapItem>
+            <VideoCard />
+          </WrapItem>
+          <WrapItem>
+            <VideoCard />
+          </WrapItem>
+          <WrapItem>
+            <VideoCard />
+          </WrapItem>
+        </Wrap>
+      </Box>
+    </Box>
   );
 }
