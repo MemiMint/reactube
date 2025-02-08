@@ -2,12 +2,12 @@
 . "$(dirname "$0")/_/husky.sh"
 
 echo "🔍 Running ESLint..."
-npx lint-staged --config .lintstagedrc.eslint.json || exit 1
+npx lint-staged --config .husky/lint-staged-tasks/.lintstagedrc.eslint.json || exit 1
 
 echo "🎨 Formatting with Prettier..."
-npx lint-staged --config .lintstagedrc.prettier.json || exit 1
+npx lint-staged --config .husky/lint-staged-tasks/.lintstagedrc.prettier.json || exit 1
 
-echo "🧪 Running tests..."
-npx lint-staged --config .lintstagedrc.vitest.json || exit 1
+echo "🧪 Running Tests..."
+npx lint-staged --config .husky/lint-staged-tasks/.lintstagedrc.vitest.json || exit 1
 
 echo "✅ All checks passed! Commit successful."
