@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Inter", sans-serif;
+}
+
+/* Reset default margins, paddings, and box sizing */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default anchor styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset button styles */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Improve media elements */
+img,
+video,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make sure headings don’t have extra margin */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+}
+
+/* Remove animations & transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
