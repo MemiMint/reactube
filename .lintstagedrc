@@ -7,6 +7,6 @@
         "prettier --write"
     ],
     "**/*.{ts,tsx}": [
-        "vitest --run --reporter=verbose"
+        "vitest related --run"
     ]
 }
