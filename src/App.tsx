@@ -1,11 +1,8 @@
 import { FC } from "react";
+import HomePage from "./modules/home";
 
 const App: FC = () => {
-  return (
-    <div className="w-screen h-screen flex items-center justify-center">
-      <h3 className="text-8xl text-red-500">Hello, world</h3>
-    </div>
-  );
+  return <HomePage />;
 };
 
 export default App;
