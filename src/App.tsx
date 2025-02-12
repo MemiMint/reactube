@@ -1,8 +1,8 @@
 import { FC } from "react";
-import HomePage from "./modules/home";
+import SignUp from "./modules/auth/signup";
 
 const App: FC = () => {
-  return <HomePage />;
+  return <SignUp />;
 };
 
 export default App;
