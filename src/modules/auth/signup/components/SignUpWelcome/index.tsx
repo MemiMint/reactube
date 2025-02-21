@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { AltLogo } from "../../../../shared/components/logo";
+import { AltLogo } from "../../../../shared/components/Logo";
 
 export const SignUpWelcome: FC = () => {
   return (

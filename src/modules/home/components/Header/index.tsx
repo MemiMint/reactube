@@ -1,5 +1,5 @@
-import { Logo } from "../../../shared/components/logo";
-import { useScrollDetection } from "../../../shared/components/hooks/useScrollDetection";
+import { Logo } from "../../../shared/components/Logo";
+import { useScrollDetection } from "../../../shared/hooks/useScrollDetection";
 
 export const Header = () => {
   const didUserScrollDown = useScrollDetection();
