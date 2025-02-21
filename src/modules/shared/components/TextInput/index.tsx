@@ -1,7 +1,8 @@
 import React, { FC } from "react";
+import { getSize } from "../../utils/get-size";
+import { Size, Sizes } from "../../types/size";
 
 type InputType = "text" | "password" | "email";
-type InputSize = "small" | "medium" | "large" | "full";
 
 type InputProps = {
   label?: string;
@@ -9,8 +10,15 @@ type InputProps = {
   name?: string;
   value?: string;
   type?: InputType;
-  size?: InputSize;
+  size?: Size;
   onChange?(event: React.ChangeEvent<HTMLInputElement>): void;
+};
+
+const SIZE_CLASSES: Sizes = {
+  small: "p-1 text-sm",
+  medium: "p-2.5 text-base",
+  large: "p-4 text-lg",
+  full: "w-full p-2.5 text-lg",
 };
 
 export const TextInput: FC<InputProps> = ({
@@ -23,13 +31,6 @@ export const TextInput: FC<InputProps> = ({
   value,
 }) => {
   const inputId = name || `input-${Math.random().toString(36).substr(2, 9)}`;
-
-  const sizeClasses = {
-    small: "p-1 text-sm",
-    medium: "p-2.5 text-base",
-    large: "p-4 text-lg",
-    full: "w-full p-2.5 text-lg",
-  };
 
   return (
     <div className="">
@@ -44,7 +45,7 @@ export const TextInput: FC<InputProps> = ({
       <input
         id={inputId}
         type={type}
-        className={`font-secondary font-medium bg-white outline-none border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ${sizeClasses[size]}`}
+        className={`font-secondary font-medium bg-white outline-none border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ${getSize(SIZE_CLASSES, size)}`}
         placeholder={placeholder}
         name={name}
         value={value}

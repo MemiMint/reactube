@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { DateOfBirth, Email, PersonalInfo, TermsAgreement } from "./components";
-import { useStateHandler } from "../../../../shared/components/hooks/useStateHandler";
+import { useStateHandler } from "../../../../shared/hooks/useStateHandler";
 import { Button } from "../../../../shared/components/Button";
 
 export const SignUpForm: FC = () => {

@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { SectionFormProps } from "../../../../types";
+import { Checkbox } from "../../../../../../shared/components/Checkbox";
 
 type TermsAgreement = {
   didAgree: boolean;
@@ -9,17 +10,17 @@ export const TermsAgreement: FC<SectionFormProps<TermsAgreement>> = ({
   state,
   updateState,
 }) => (
-  <div className="mt-4 flex items-start mb-6">
-    <input
-      id="terms"
+  <div className="mt-4 flex items-center mb-6">
+    <Checkbox
+      label=""
+      value={state.didAgree}
       name="didAgree"
-      checked={state.didAgree}
-      onChange={() => updateState({ didAgree: !state.didAgree })}
-      type="checkbox"
-      className="w-4 h-4 border border-gray-300 rounded-sm bg-gray-50 focus:ring-3 focus:ring-blue-300"
-      required
+      onCheck={() => updateState({ didAgree: !state.didAgree })}
     />
-    <label htmlFor="terms" className="ms-2 text-sm font-medium text-gray-900">
+    <label
+      htmlFor="didAgree"
+      className="ms-2 text-sm font-medium text-gray-900"
+    >
       I agree with the{" "}
       <a href="#" className="text-blue-600 hover:underline">
         terms and conditions

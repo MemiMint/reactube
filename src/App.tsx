@@ -1,8 +1,8 @@
 import { FC } from "react";
-import SignUp from "./modules/auth/signup";
+import SignIn from "./modules/auth/signin";
 
 const App: FC = () => {
-  return <SignUp />;
+  return <SignIn />;
 };
 
 export default App;

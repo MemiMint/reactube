@@ -1,20 +1,26 @@
 import { FC } from "react";
+import { getSize } from "../../utils/get-size";
+import { Size, Sizes } from "../../types/size";
 
 export type DropdownItems = {
   value: string | number;
   description: string;
 };
-
-type DropdownSize = "small" | "medium" | "large";
-
 type DropdownProps = {
   label?: string;
   name?: string;
   value?: string;
   placeholder?: string;
-  size?: DropdownSize;
+  size?: Size;
   onChange?(event: React.ChangeEvent<HTMLSelectElement>): void;
   items?: DropdownItems[];
+};
+
+const SIZE_CLASSES: Sizes = {
+  small: "p-1 text-sm w-24",
+  medium: "p-2.5 text-base w-32",
+  large: "p-4 text-lg w-40",
+  full: "p-2.5 text-base w-full",
 };
 
 export const Dropdown: FC<DropdownProps> = ({
@@ -28,17 +34,6 @@ export const Dropdown: FC<DropdownProps> = ({
 }) => {
   const dropdownId =
     name || `dropdown-${Math.random().toString(36).substr(2, 9)}`;
-
-  const getSizeClasses = (size: DropdownSize) => {
-    switch (size) {
-      case "small":
-        return "p-1 text-sm w-24";
-      case "large":
-        return "p-4 text-lg w-40";
-      default:
-        return "p-2.5 text-base w-32"; // Default to medium
-    }
-  };
 
   return (
     <div className="flex flex-col">
@@ -55,7 +50,7 @@ export const Dropdown: FC<DropdownProps> = ({
         name={name}
         value={value}
         onChange={onChange}
-        className={`bg-white border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block ${getSizeClasses(size)}`}
+        className={`bg-white border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block ${getSize(SIZE_CLASSES, size)}`}
       >
         {placeholder && (
           <option className="hidden" value="">
