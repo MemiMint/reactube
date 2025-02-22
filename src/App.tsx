@@ -1,8 +1,9 @@
 import { FC } from "react";
-import SignIn from "./modules/auth/signin";
+import { ApplicationRouter } from "./modules/routing";
+import { ROUTES } from "./modules/routing/routes";
 
 const App: FC = () => {
-  return <SignIn />;
+  return <ApplicationRouter routes={ROUTES} />;
 };
 
 export default App;

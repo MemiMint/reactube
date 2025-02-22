@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { Logo } from "../../../shared/components/Logo";
 import { useScrollDetection } from "../../../shared/hooks/useScrollDetection";
 
@@ -11,9 +12,11 @@ export const Header = () => {
       }`}
     >
       <Logo />
-      <button className="py-2 px-6 rounded-sm text-white outline-none bg-blue-500 font-secondary font-medium">
-        Sign In
-      </button>
+      <NavLink to="/auth/signin">
+        <button className="cursor-pointer py-2 px-6 rounded-sm text-white outline-none bg-blue-500 font-secondary font-medium hover:bg-blue-600">
+          Sign In
+        </button>
+      </NavLink>
     </header>
   );
 };

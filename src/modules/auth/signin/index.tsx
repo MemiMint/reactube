@@ -5,6 +5,7 @@ import { Button } from "../../shared/components/Button";
 import { useStateHandler } from "../../shared/hooks/useStateHandler";
 import { Checkbox } from "../../shared/components/Checkbox";
 import { useLoading } from "../../shared/hooks/useLoading";
+import { NavLink } from "react-router";
 
 type LoginState = {
   email: string;
@@ -64,9 +65,11 @@ const Page: FC = () => {
           <div>
             <p className="font-secondary text-sm text-gray-500 mt-4">
               Don't have an account?{" "}
-              <span className="text-blue-900 font-semibold">
-                Create an account
-              </span>
+              <NavLink to="/auth/signup">
+                <span className="text-blue-900 font-semibold">
+                  Create an account
+                </span>
+              </NavLink>
             </p>
           </div>
         </div>
