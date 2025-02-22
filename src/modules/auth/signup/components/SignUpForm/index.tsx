@@ -2,6 +2,7 @@ import { FC } from "react";
 import { DateOfBirth, Email, PersonalInfo, TermsAgreement } from "./components";
 import { useStateHandler } from "../../../../shared/hooks/useStateHandler";
 import { Button } from "../../../../shared/components/Button";
+import { NavLink } from "react-router";
 
 export const SignUpForm: FC = () => {
   const { state, updateState } = useStateHandler({
@@ -57,7 +58,9 @@ export const SignUpForm: FC = () => {
       <div className="text-center mt-2">
         <p className="font-secondary font-medium text-gray-500 text-sm">
           Have an account?{" "}
-          <span className="text-blue-500 font-bold">Sign In</span>
+          <NavLink to="/auth/signin">
+            <span className="text-blue-500 font-bold">Sign In</span>
+          </NavLink>
         </p>
       </div>
     </div>

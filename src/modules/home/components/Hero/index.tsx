@@ -1,3 +1,5 @@
+import { NavLink } from "react-router";
+
 export const Hero = () => {
   return (
     <section className="w-full h-screen">
@@ -10,8 +12,9 @@ export const Hero = () => {
           and modern video platform built for the next generation. Enjoy a
           seamless experience powered by cutting-edge technology
         </p>
-        <button
-          className="
+        <NavLink to="/auth/signup">
+          <button
+            className="
               font-primary 
               font-medium 
               py-2 px-10 
@@ -24,9 +27,10 @@ export const Hero = () => {
               duration-300 
               hover:scale-105
             "
-        >
-          Get Started
-        </button>
+          >
+            Get Started
+          </button>
+        </NavLink>
       </div>
     </section>
   );
