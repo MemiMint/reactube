@@ -7,8 +7,6 @@ type ApplicationRouterProps = {
 };
 
 export const ApplicationRouter: FC<ApplicationRouterProps> = ({ routes }) => {
-  console.log(routes);
-
   return (
     <BrowserRouter>
       <Routes>
