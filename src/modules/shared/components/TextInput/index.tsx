@@ -11,6 +11,7 @@ type InputProps = {
   value?: string;
   type?: InputType;
   size?: Size;
+  disabled?: boolean;
   onChange?(event: React.ChangeEvent<HTMLInputElement>): void;
 };
 
@@ -25,6 +26,7 @@ export const TextInput: FC<InputProps> = ({
   name,
   type = "text",
   size = "medium",
+  disabled = false,
   placeholder,
   label,
   onChange,
@@ -33,7 +35,7 @@ export const TextInput: FC<InputProps> = ({
   const inputId = name || `input-${Math.random().toString(36).substr(2, 9)}`;
 
   return (
-    <div className="">
+    <div className="text-start">
       {label && (
         <label
           htmlFor={inputId}
@@ -44,8 +46,9 @@ export const TextInput: FC<InputProps> = ({
       )}
       <input
         id={inputId}
+        disabled={disabled}
         type={type}
-        className={`font-secondary font-medium bg-white outline-none border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ${getSize(SIZE_CLASSES, size)}`}
+        className={`font-secondary font-medium bg-white outline-none border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-300 block w-full ${getSize(SIZE_CLASSES, size)}`}
         placeholder={placeholder}
         name={name}
         value={value}
