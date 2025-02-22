@@ -1,0 +1,18 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Define the allowed branch name pattern
+BRANCH_NAME_PATTERN="^(feature|bugfix|hotfix|chore|refactor|test)\/[0-9]+-[a-z0-9-]+$"
+
+# Get the current branch name
+CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
+
+# Check if the branch name matches the pattern
+if ! echo "$CURRENT_BRANCH" | grep -Eq "$BRANCH_NAME_PATTERN"; then
+  echo "❌ Branch name \"$CURRENT_BRANCH\" doesn't follow the convention:"
+  echo "   <type>/<ticketID>-<short-description>"
+  echo "   Example: feature/3-signin-form"
+  exit 1
+fi
+
+echo "✅ Branch name \"$CURRENT_BRANCH\" is valid."
