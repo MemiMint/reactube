@@ -1,11 +1,12 @@
 import { FC } from "react";
 import { Logo } from "../../shared/components/Logo";
 import { TextInput } from "../../shared/components/TextInput";
-import { Button } from "../../shared/components/Button";
+import { Button } from "../../shared/components/buttons/Button";
 import { useStateHandler } from "../../shared/hooks/useStateHandler";
 import { Checkbox } from "../../shared/components/Checkbox";
 import { useLoading } from "../../shared/hooks/useLoading";
 import { NavLink } from "react-router";
+import { useEnterKeyPress } from "../../shared/hooks/useEnterKeyPress";
 
 type LoginState = {
   email: string;
@@ -19,6 +20,12 @@ const Page: FC = () => {
     password: "",
     rememberMe: false,
   });
+
+  const mockHandleSubmit = () => {
+    alert("Account logged in");
+  };
+
+  useEnterKeyPress(mockHandleSubmit, true);
 
   const { isLoading } = useLoading();
 
@@ -61,7 +68,11 @@ const Page: FC = () => {
           <p className="font-primary text-sm text-blue-900">Forgot Password?</p>
         </div>
         <div className="mt-4">
-          <Button isLoading={isLoading} label="Sign in" />
+          <Button
+            onClick={mockHandleSubmit}
+            isLoading={isLoading}
+            label="Sign in"
+          />
           <div>
             <p className="font-secondary text-sm text-gray-500 mt-4">
               Don't have an account?{" "}
