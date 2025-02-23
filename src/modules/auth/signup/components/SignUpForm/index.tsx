@@ -1,8 +1,9 @@
 import { FC } from "react";
 import { DateOfBirth, Email, PersonalInfo, TermsAgreement } from "./components";
 import { useStateHandler } from "../../../../shared/hooks/useStateHandler";
-import { Button } from "../../../../shared/components/Button";
+import { Button } from "../../../../shared/components/buttons/Button";
 import { NavLink } from "react-router";
+import { useEnterKeyPress } from "../../../../shared/hooks/useEnterKeyPress";
 
 export const SignUpForm: FC = () => {
   const { state, updateState } = useStateHandler({
@@ -24,6 +25,12 @@ export const SignUpForm: FC = () => {
       didAgree: false,
     },
   });
+
+  const mockHandleSubmit = () => {
+    alert("User created");
+  };
+
+  useEnterKeyPress(mockHandleSubmit, true);
 
   return (
     <div className="w-full md:w-3/5 p-8">
@@ -54,7 +61,7 @@ export const SignUpForm: FC = () => {
           })
         }
       />
-      <Button label="Create account" size="medium" />
+      <Button onClick={mockHandleSubmit} label="Create account" size="medium" />
       <div className="text-center mt-2">
         <p className="font-secondary font-medium text-gray-500 text-sm">
           Have an account?{" "}
