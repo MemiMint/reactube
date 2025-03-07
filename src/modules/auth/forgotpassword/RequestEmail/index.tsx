@@ -7,17 +7,23 @@ type RequestEmailState = {
   emailTo: string;
 };
 
-export const RequestEmail = () => {
+const Page = () => {
   const { state, updateState } = useStateHandler<RequestEmailState>({
     emailTo: "",
     success: false,
   });
 
-  return state.success ? (
-    <EmailSentMessage emailTo={state.emailTo} />
-  ) : (
-    <RequestEmailForm
-      onSubmit={(email) => updateState({ success: true, emailTo: email })}
-    />
+  return (
+    <main className="p-8 min-h-screen flex items-center justify-center bg-gray-200">
+      {state.success ? (
+        <EmailSentMessage emailTo={state.emailTo} />
+      ) : (
+        <RequestEmailForm
+          onSubmit={(email) => updateState({ emailTo: email, success: true })}
+        />
+      )}
+    </main>
   );
 };
+
+export default Page;

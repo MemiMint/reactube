@@ -9,5 +9,11 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: "./src/test/setup.ts",
   },
+  resolve: {
+    alias: {
+      "@modules": "/src/modules",
+      "@shared": "/src/modules/shared",
+    },
+  },
   plugins: [react(), tailwindcss()],
 });
