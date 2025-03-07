@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import { TextButton } from "../../../../../shared/components/buttons/TextButton";
 import { IoMdReturnLeft } from "react-icons/io";
 import { Button } from "../../../../../shared/components/buttons/Button";
+import { generateUUID } from "../../../../../shared/utils/mocks/uid-generator";
 
 export const EmailSentMessage: FC<{ emailTo: string }> = ({ emailTo }) => {
   const navigate = useNavigate();
@@ -22,7 +23,12 @@ export const EmailSentMessage: FC<{ emailTo: string }> = ({ emailTo }) => {
           folder
         </p>
       </div>
-      <Button label="Continue" onClick={() => navigate("/pin")} />
+      <Button
+        label="Continue"
+        onClick={() =>
+          navigate(`/auth/forgotpassword/${generateUUID()}/codeverification`)
+        }
+      />
       <div className="mt-2">
         <TextButton
           onClick={() => navigate("/auth/signin")}

@@ -1,4 +1,4 @@
-import { DropdownItems } from "../components/Dropdown";
+import { DropdownItems } from "@shared/components/Dropdown";
 
 /**
  * Transforms an array of values into DropdownItems.
