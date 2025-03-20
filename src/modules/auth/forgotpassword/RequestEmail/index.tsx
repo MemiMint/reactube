@@ -1,4 +1,4 @@
-import { useStateHandler } from "../../../shared/hooks/useStateHandler";
+import { useStateHandler } from "@shared/hooks/useStateHandler";
 import { EmailSentMessage } from "./components/EmailSentMessage";
 import { RequestEmailForm } from "./components/RequestEmailForm";
 

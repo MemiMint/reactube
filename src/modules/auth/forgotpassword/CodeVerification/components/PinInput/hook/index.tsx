@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useStateHandler } from "@shared/hooks/useStateHandler";
 
 type PinInputState = {
@@ -14,7 +14,10 @@ type PinInputHandler = PinInputState & {
   ): void;
 };
 
-export const usePinInput = (length: number): PinInputHandler => {
+export const usePinInput = (
+  length: number,
+  onComplete: CallableFunction,
+): PinInputHandler => {
   const { state, updateState } = useStateHandler<PinInputState>({
     currentIndex: 0,
     pinValues: Array.from<string>({ length }).fill(""),
@@ -64,6 +67,14 @@ export const usePinInput = (length: number): PinInputHandler => {
       moveBackwards();
     }
   };
+
+  useEffect(() => {
+    const areInputsCompleted = state.pinValues.every((input) => input !== "");
+
+    if (areInputsCompleted) {
+      onComplete();
+    }
+  }, [state.pinValues]);
 
   return {
     currentIndex: state.currentIndex,

@@ -1,16 +1,18 @@
 import { type RouteProps } from "react-router";
 import { lazy } from "react";
 
-const Home = lazy(() => import("../home"));
-const SignIn = lazy(() => import("../auth/signin"));
-const SignUp = lazy(() => import("../auth/signup"));
-const NotFound = lazy(() => import("../shared/components/NotFound"));
-const RequestEmail = lazy(() => import("../auth/forgotpassword/RequestEmail"));
+const Home = lazy(() => import("@modules/home"));
+const SignIn = lazy(() => import("@modules/auth/signin"));
+const SignUp = lazy(() => import("@modules/auth/signup"));
+const NotFound = lazy(() => import("@shared/components/NotFound"));
+const RequestEmail = lazy(
+  () => import("@modules/auth/forgotpassword/RequestEmail"),
+);
 const CodeVerification = lazy(
-  () => import("../auth/forgotpassword/CodeVerification"),
+  () => import("@modules/auth/forgotpassword/CodeVerification"),
 );
 const ResetPassword = lazy(
-  () => import("../auth/forgotpassword/ResetPassword"),
+  () => import("@modules/auth/forgotpassword/ResetPassword"),
 );
 
 type AppRoute = RouteProps & { childrenRoutes?: RouteProps[] };
