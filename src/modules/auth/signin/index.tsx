@@ -65,7 +65,11 @@ const Page: FC = () => {
             value={state.rememberMe}
             onCheck={() => updateState({ rememberMe: !state.rememberMe })}
           />
-          <p className="font-primary text-sm text-blue-900">Forgot Password?</p>
+          <NavLink to="/auth/forgotpassword">
+            <p className="font-primary text-sm text-blue-900">
+              Forgot Password?
+            </p>
+          </NavLink>
         </div>
         <div className="mt-4">
           <Button
