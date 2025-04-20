@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { AppRoute } from "./types";
+import { Layout } from "@modules/shared/layout";
 
 type ApplicationRouterProps = {
   routes: AppRoute[];
@@ -18,7 +19,13 @@ export const ApplicationRouter: FC<ApplicationRouterProps> = ({ routes }) => {
                   key={childIndex}
                   index={childRoute.index}
                   path={childRoute.path}
-                  element={childRoute.element}
+                  element={
+                    childRoute.withLayout ? (
+                      <Layout>{childRoute.element}</Layout>
+                    ) : (
+                      childRoute.element
+                    )
+                  }
                 />
               ))}
             </Route>
@@ -27,7 +34,13 @@ export const ApplicationRouter: FC<ApplicationRouterProps> = ({ routes }) => {
               key={index}
               index={route.index && !route.path}
               path={route.path}
-              element={route.element}
+              element={
+                route.withLayout ? (
+                  <Layout>{route.element}</Layout>
+                ) : (
+                  route.element
+                )
+              }
             />
           );
         })}

@@ -6,7 +6,7 @@ type Loading = {
 };
 
 export const useLoading = (): Loading => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const toggleLoading = () => {
     setIsLoading((prevState) => !prevState);

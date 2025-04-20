@@ -1,4 +1,4 @@
-import { type RouteProps } from "react-router";
+import type { AppRoute } from "./types";
 import { lazy } from "react";
 
 const Home = lazy(() => import("@modules/home"));
@@ -15,7 +15,8 @@ const ResetPassword = lazy(
   () => import("@modules/auth/forgotpassword/ResetPassword"),
 );
 
-type AppRoute = RouteProps & { childrenRoutes?: RouteProps[] };
+const Overview = lazy(() => import("@modules/overview"));
+const Results = lazy(() => import("@modules/results/"));
 
 const ROUTE_PATH = {
   HOME: "/",
@@ -25,6 +26,8 @@ const ROUTE_PATH = {
   FORGOT_PASSWORD: "/forgotpassword",
   CODE_VERIFICATION: "/codeverification",
   PASSWORD_RESET: "/passwordrecovery",
+  OVERVIEW: "/overview",
+  RESULTS: "/results",
 };
 
 export const ROUTES: AppRoute[] = [
@@ -34,10 +37,24 @@ export const ROUTES: AppRoute[] = [
     element: <Home />,
   },
   {
+    path: "/overview",
+    element: <Overview />,
+    withLayout: true,
+  },
+  {
+    path: "/results",
+    element: <Results />,
+    withLayout: true,
+  },
+  {
     path: ROUTE_PATH.AUTH,
     element: null,
     childrenRoutes: [
-      { index: true, path: `/auth${ROUTE_PATH.SIGN_IN}`, element: <SignIn /> },
+      {
+        index: true,
+        path: `/auth${ROUTE_PATH.SIGN_IN}`,
+        element: <SignIn />,
+      },
       { path: `/auth${ROUTE_PATH.SIGN_UP}`, element: <SignUp /> },
       {
         path: `/auth${ROUTE_PATH.FORGOT_PASSWORD}`,
