@@ -59,6 +59,7 @@ export const TextInput: FC<InputProps> = ({
           <span className="absolute left-3 text-gray-500">{startIcon}</span>
         )}
         <input
+          autoComplete="off"
           id={inputId}
           disabled={disabled}
           type={type === "password" && showPassword ? "text" : type}

@@ -16,6 +16,7 @@ const ResetPassword = lazy(
 );
 
 const Overview = lazy(() => import("@modules/overview"));
+const Results = lazy(() => import("@modules/results/"));
 
 const ROUTE_PATH = {
   HOME: "/",
@@ -26,6 +27,7 @@ const ROUTE_PATH = {
   CODE_VERIFICATION: "/codeverification",
   PASSWORD_RESET: "/passwordrecovery",
   OVERVIEW: "/overview",
+  RESULTS: "/results",
 };
 
 export const ROUTES: AppRoute[] = [
@@ -37,6 +39,11 @@ export const ROUTES: AppRoute[] = [
   {
     path: "/overview",
     element: <Overview />,
+    withLayout: true,
+  },
+  {
+    path: "/results",
+    element: <Results />,
     withLayout: true,
   },
   {

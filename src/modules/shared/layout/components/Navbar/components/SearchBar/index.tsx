@@ -1,9 +1,11 @@
 import { TextInput } from "@modules/shared/components/TextInput";
 import { SearchSuggestion } from "@modules/shared/types/search-suggestion";
-import { useRef, type FC } from "react";
+import { useRef, useState, type FC } from "react";
 import { FiSearch } from "react-icons/fi";
 import { SuggestionList } from "./component/SuggestionsList";
 import { useToggleWithClickOutside } from "@modules/shared/hooks/useToggleWithClickOutside";
+import { useEnterKeyPress } from "@modules/shared/hooks/useEnterKeyPress";
+import { useNavigate } from "react-router";
 
 const SEARCH_SUGGESTIONS: SearchSuggestion[] = [
   { isHistory: true, title: "React useState hook" },
@@ -19,8 +21,17 @@ const SEARCH_SUGGESTIONS: SearchSuggestion[] = [
 ];
 
 export const SearchBar: FC = () => {
+  const [search, setSearch] = useState<string>("");
+  const navigate = useNavigate();
   const searchRef = useRef<HTMLDivElement>(null);
   const toggleSearchSuggestionList = useToggleWithClickOutside(searchRef);
+
+  const onNavigateSearchResult = () => {
+    toggleSearchSuggestionList.handleClose();
+    navigate(`/results?search_query=${search}`);
+  };
+
+  useEnterKeyPress(onNavigateSearchResult, true);
 
   return (
     <div className="w-2xl relative" ref={searchRef}>
@@ -29,9 +40,14 @@ export const SearchBar: FC = () => {
         startIcon={<FiSearch />}
         size="full"
         placeholder="Search"
+        name="search"
+        onChange={(event) => setSearch(event.target.value)}
       />
       {toggleSearchSuggestionList.isOpen && (
-        <SuggestionList searchSuggestions={SEARCH_SUGGESTIONS} />
+        <SuggestionList
+          onClose={() => toggleSearchSuggestionList.handleClose()}
+          searchSuggestions={SEARCH_SUGGESTIONS}
+        />
       )}
     </div>
   );

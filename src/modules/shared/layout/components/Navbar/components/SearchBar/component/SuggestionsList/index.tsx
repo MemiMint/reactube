@@ -2,9 +2,10 @@ import { SearchSuggestion } from "@modules/shared/types/search-suggestion";
 import type { FC } from "react";
 import { Suggestion } from "./components/Suggestion";
 
-export const SuggestionList: FC<{ searchSuggestions: SearchSuggestion[] }> = ({
-  searchSuggestions,
-}) => {
+export const SuggestionList: FC<{
+  searchSuggestions: SearchSuggestion[];
+  onClose(): void;
+}> = ({ searchSuggestions, onClose }) => {
   return (
     <div
       style={{ overflowY: "auto" }}
@@ -13,7 +14,13 @@ export const SuggestionList: FC<{ searchSuggestions: SearchSuggestion[] }> = ({
       {searchSuggestions
         .sort((a, b) => Number(b.isHistory) - Number(a.isHistory))
         .map((searchSuggestion, index) => {
-          return <Suggestion key={index} searchSuggestion={searchSuggestion} />;
+          return (
+            <Suggestion
+              key={index}
+              onClose={onClose}
+              searchSuggestion={searchSuggestion}
+            />
+          );
         })}
     </div>
   );

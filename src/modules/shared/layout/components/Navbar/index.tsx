@@ -8,7 +8,7 @@ export const Navbar: FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
   return (
-    <nav className="h-20 bg-white px-4 flex items-center justify-between sticky top-0 z-10">
+    <nav className="cursor-pointer h-20 bg-white px-4 flex items-center justify-between sticky top-0 z-10">
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
         className="md:hidden text-xl mx-1"

@@ -12,10 +12,12 @@ export const SECTIONS: SidebarSection[] = [
       {
         icon: <FiHome size={ICON_SIZE} />,
         title: "Home",
+        href: "/overview",
       },
       {
         icon: <FiPlayCircle size={ICON_SIZE} />,
         title: "Subscriptions",
+        href: "/subscriptions",
       },
     ],
   },
@@ -25,22 +27,27 @@ export const SECTIONS: SidebarSection[] = [
       {
         icon: <MdHistory size={ICON_SIZE} />,
         title: "History",
+        href: "/history",
       },
       {
         icon: <MdOutlinePlaylistPlay size={ICON_SIZE} />,
         title: "Playlist",
+        href: "/playlist",
       },
       {
         icon: <GoVideo size={ICON_SIZE} />,
         title: "Your videos",
+        href: "/videos",
       },
       {
         icon: <FiClock size={ICON_SIZE} />,
         title: "Watch later",
+        href: "/later",
       },
       {
         icon: <PiThumbsUp size={ICON_SIZE} />,
         title: "Liked videos",
+        href: "/liked-videos",
       },
     ],
   },
