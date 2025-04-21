@@ -106,3 +106,5 @@ export const CHANNELS: Channel[] = [
     channelFollowers: "980K",
   },
 ];
+
+export const VIDEO_DESCRIPTION: string = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus esse tenetur eveniet, quae illo saepe ea magnam placeat in, laborum necessitatibus magni! Ex eveniet minus perferendis rem natus nihil ratione voluptatum error, enim omnis debitis, facere molestiae nulla excepturi expedita suscipit veritatis fuga quisquam itaque cupiditate, commodi similique officia. Itaque molestias veniam illo, atque aperiam cum expedita dolores numquam. Dolores voluptate quam est ea adipisci dicta. Est possimus dolorum dolores magnam ex aliquam excepturi quis velit saepe, recusandae deleniti, vitae dolore tempore architecto praesentium alias suscipit veniam expedita at amet repudiandae rerum. Optio, dolor! Culpa numquam recusandae necessitatibus molestiae voluptatum?`;

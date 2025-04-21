@@ -1,4 +1,4 @@
-import { parseMillisecondsIntoReadableTime } from "@modules/shared/utils/time/readable-time";
+import { parseMillisecondsIntoReadableTime } from "@modules/shared/utils/time/readable-hour";
 import { FC } from "react";
 
 type VideoOverlayProps = {

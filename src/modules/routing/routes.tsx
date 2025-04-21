@@ -14,6 +14,7 @@ const CodeVerification = lazy(
 const ResetPassword = lazy(
   () => import("@modules/auth/forgotpassword/ResetPassword"),
 );
+const Watch = lazy(() => import("@modules/watch"));
 
 const Overview = lazy(() => import("@modules/overview"));
 const Results = lazy(() => import("@modules/results/"));
@@ -44,6 +45,11 @@ export const ROUTES: AppRoute[] = [
   {
     path: "/results",
     element: <Results />,
+    withLayout: true,
+  },
+  {
+    path: "/watch",
+    element: <Watch />,
     withLayout: true,
   },
   {
