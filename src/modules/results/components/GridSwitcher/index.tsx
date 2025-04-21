@@ -15,7 +15,7 @@ const GridSwitch: FC<GridSwitchProps> = (props) => {
 
   return (
     <div
-      onClick={() => props.onClick(props.type)}
+      onClick={() => !props.disabled && props.onClick(props.type)}
       className={`p-2 cursor-pointer ${roundCorner} ${props.disabled ? "" : selectedClassname} ${disabledClassname}`}
     >
       {props.type == "horizontal" ? (
