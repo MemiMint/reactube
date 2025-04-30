@@ -3,8 +3,8 @@ import { VideoTitle } from "./components/VideoTitle";
 import { ChannelInfo } from "./components/ChannelInfo";
 import { LikesAndDislikes } from "./components/LikesAndDislikes";
 import { VideoDescription } from "./components/VideoDescription";
-import { VIDEO_DESCRIPTION } from "@modules/mock/constants";
-import { RecommendedVideos } from "./components/RecommendedVideos";
+import { RECOMMENDED_VIDEOS, VIDEO_DESCRIPTION } from "@modules/mock/constants";
+import { RecommendedVideos } from "./components/RecommendedVideoList";
 import { Comments } from "./components/Comments";
 
 const Watch = () => {
@@ -42,7 +42,7 @@ const Watch = () => {
         </div>
 
         {/* Recommended Videos */}
-        <RecommendedVideos />
+        <RecommendedVideos recommendedVideos={RECOMMENDED_VIDEOS} />
       </div>
 
       {/* Comment Section */}

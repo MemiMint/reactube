@@ -107,4 +107,42 @@ export const CHANNELS: Channel[] = [
   },
 ];
 
+export const RECOMMENDED_VIDEOS = [
+  {
+    thumbnailUrl: "https://i.ytimg.com/vi/w7ejDZ8SWv8/hqdefault.jpg",
+    title: "React JS Crash Course",
+    channelName: "Traversy Media",
+    views: 2400000,
+    releaseDate: "1 year ago",
+  },
+  {
+    thumbnailUrl: "https://i.ytimg.com/vi/3PHXvlpOkf4/hqdefault.jpg",
+    title: "JavaScript Tutorial for Beginners",
+    channelName: "Programming with Mosh",
+    views: 5100000,
+    releaseDate: "2 years ago",
+  },
+  {
+    thumbnailUrl: "https://i.ytimg.com/vi/pTB0EiLXUC8/hqdefault.jpg",
+    title: "Node.js Tutorial for Beginners: Learn Node in 1 Hour",
+    channelName: "Mosh Hamedani",
+    views: 1900000,
+    releaseDate: "2 years ago",
+  },
+  {
+    thumbnailUrl: "https://i.ytimg.com/vi/gYzHS-n2gqU/hqdefault.jpg",
+    title: "How the Internet Works in 5 Minutes",
+    channelName: "Aaron Computer Science",
+    views: 1500000,
+    releaseDate: "9 months ago",
+  },
+  {
+    thumbnailUrl: "https://i.ytimg.com/vi/k3Vfj-e1Ma4/hqdefault.jpg",
+    title: "Learn Docker in 7 Minutes",
+    channelName: "TechWorld with Nana",
+    views: 1200000,
+    releaseDate: "11 months ago",
+  },
+];
+
 export const VIDEO_DESCRIPTION: string = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus esse tenetur eveniet, quae illo saepe ea magnam placeat in, laborum necessitatibus magni! Ex eveniet minus perferendis rem natus nihil ratione voluptatum error, enim omnis debitis, facere molestiae nulla excepturi expedita suscipit veritatis fuga quisquam itaque cupiditate, commodi similique officia. Itaque molestias veniam illo, atque aperiam cum expedita dolores numquam. Dolores voluptate quam est ea adipisci dicta. Est possimus dolorum dolores magnam ex aliquam excepturi quis velit saepe, recusandae deleniti, vitae dolore tempore architecto praesentium alias suscipit veniam expedita at amet repudiandae rerum. Optio, dolor! Culpa numquam recusandae necessitatibus molestiae voluptatum?`;
