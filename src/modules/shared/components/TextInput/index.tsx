@@ -16,6 +16,7 @@ type InputProps = {
   startIcon?: ReactNode; // New prop for icon at the start
   onChange?(event: React.ChangeEvent<HTMLInputElement>): void;
   onFocus?(event?: React.FocusEvent<HTMLInputElement>): void;
+  onKeyDown?(event?: React.KeyboardEvent<HTMLInputElement>): void;
 };
 
 const SIZE_CLASSES: Sizes = {
@@ -36,6 +37,7 @@ export const TextInput: FC<InputProps> = ({
   startIcon,
   onChange,
   onFocus,
+  onKeyDown,
 }) => {
   const [showPassword, setShowPassword] = useState(false);
   const inputId = name || `input-${Math.random().toString(36).substr(2, 9)}`;
@@ -71,6 +73,7 @@ export const TextInput: FC<InputProps> = ({
           value={value}
           onChange={onChange}
           onFocus={onFocus}
+          onKeyDown={onKeyDown}
         />
         {type === "password" && (
           <button

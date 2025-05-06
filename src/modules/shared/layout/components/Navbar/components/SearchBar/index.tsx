@@ -4,7 +4,6 @@ import { useRef, useState, type FC } from "react";
 import { FiSearch } from "react-icons/fi";
 import { SuggestionList } from "./component/SuggestionsList";
 import { useToggleWithClickOutside } from "@modules/shared/hooks/useToggleWithClickOutside";
-import { useEnterKeyPress } from "@modules/shared/hooks/useEnterKeyPress";
 import { useNavigate } from "react-router";
 
 const SEARCH_SUGGESTIONS: SearchSuggestion[] = [
@@ -31,7 +30,7 @@ export const SearchBar: FC = () => {
     navigate(`/results?search_query=${search}`);
   };
 
-  useEnterKeyPress(onNavigateSearchResult, true);
+  //useEnterKeyPress(onNavigateSearchResult, true);
 
   return (
     <div className="w-2xl relative" ref={searchRef}>
@@ -42,6 +41,12 @@ export const SearchBar: FC = () => {
         placeholder="Search"
         name="search"
         onChange={(event) => setSearch(event.target.value)}
+        onKeyDown={(event) => {
+          if (event?.key === "Enter") {
+            event.preventDefault();
+            onNavigateSearchResult();
+          }
+        }}
       />
       {toggleSearchSuggestionList.isOpen && (
         <SuggestionList

@@ -5,7 +5,7 @@ import { LikesAndDislikes } from "./components/LikesAndDislikes";
 import { VideoDescription } from "./components/VideoDescription";
 import { RECOMMENDED_VIDEOS, VIDEO_DESCRIPTION } from "@modules/mock/constants";
 import { RecommendedVideoList } from "./components/RecommendedVideoList";
-import { Comments } from "./components/CommentList";
+import { CommentSection } from "./components/CommentSection";
 
 const Watch = () => {
   return (
@@ -39,14 +39,14 @@ const Watch = () => {
               releaseDate={new Date("2022-05-22")}
             />
           </div>
+
+          {/* Comment Section */}
+          <CommentSection />
         </div>
 
         {/* Recommended Videos */}
         <RecommendedVideoList recommendedVideos={RECOMMENDED_VIDEOS} />
       </div>
-
-      {/* Comment Section */}
-      <Comments />
     </div>
   );
 };
