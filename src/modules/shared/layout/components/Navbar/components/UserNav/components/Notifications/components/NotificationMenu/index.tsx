@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { MdClose } from "react-icons/md";
-import type { Notification } from "@shared/types/Notification";
+import type { Notification } from "@modules/shared/types/notification";
 import { NotificationMenuItem } from "./NotificationMenuItem";
 
 const notifications: Notification[] = [

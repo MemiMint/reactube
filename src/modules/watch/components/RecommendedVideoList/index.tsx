@@ -3,7 +3,7 @@ import { FC } from "react";
 import { RecommendedVideo } from "../RecommendedVideo";
 import { parseQuantity } from "@modules/shared/utils/parse-quantity";
 
-export const RecommendedVideos: FC<{
+export const RecommendedVideoList: FC<{
   recommendedVideos: Partial<Video>[];
 }> = ({ recommendedVideos }) => {
   return (

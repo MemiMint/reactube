@@ -1,4 +1,4 @@
-import { Notification } from "@modules/shared/types/Notification";
+import { Notification } from "@modules/shared/types/notification";
 import type { FC } from "react";
 
 export const NotificationMenuItem: FC<{ notification: Notification }> = ({

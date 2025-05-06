@@ -4,8 +4,8 @@ import { ChannelInfo } from "./components/ChannelInfo";
 import { LikesAndDislikes } from "./components/LikesAndDislikes";
 import { VideoDescription } from "./components/VideoDescription";
 import { RECOMMENDED_VIDEOS, VIDEO_DESCRIPTION } from "@modules/mock/constants";
-import { RecommendedVideos } from "./components/RecommendedVideoList";
-import { Comments } from "./components/Comments";
+import { RecommendedVideoList } from "./components/RecommendedVideoList";
+import { CommentSection } from "./components/CommentSection";
 
 const Watch = () => {
   return (
@@ -39,14 +39,14 @@ const Watch = () => {
               releaseDate={new Date("2022-05-22")}
             />
           </div>
+
+          {/* Comment Section */}
+          <CommentSection />
         </div>
 
         {/* Recommended Videos */}
-        <RecommendedVideos recommendedVideos={RECOMMENDED_VIDEOS} />
+        <RecommendedVideoList recommendedVideos={RECOMMENDED_VIDEOS} />
       </div>
-
-      {/* Comment Section */}
-      <Comments />
     </div>
   );
 };

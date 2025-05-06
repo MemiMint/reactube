@@ -145,4 +145,37 @@ export const RECOMMENDED_VIDEOS = [
   },
 ];
 
+export const COMMENTS = [
+  {
+    username: "John Smith",
+    avatarUrl: "https://i.pravatar.cc/150?img=1",
+    comment: "Awesome video! 🔥 Learned a lot!",
+    timestamp: "5 minutes ago",
+  },
+  {
+    username: "Alice Johnson",
+    avatarUrl: "https://i.pravatar.cc/150?img=2",
+    comment: "Can someone explain 03:15? I'm confused 🤔",
+    timestamp: "12 minutes ago",
+  },
+  {
+    username: "DevGuru",
+    avatarUrl: "https://i.pravatar.cc/150?img=5",
+    comment: "This should be in every dev's watch list 👏",
+    timestamp: "1 hour ago",
+  },
+  {
+    username: "Emily Tran",
+    avatarUrl: "https://i.pravatar.cc/150?img=9",
+    comment: "Thanks for making this! ❤️ Really well explained.",
+    timestamp: "3 hours ago",
+  },
+  {
+    username: "CodeMonster",
+    avatarUrl: "https://i.pravatar.cc/150?img=11",
+    comment: "Don't forget to like and subscribe 😉",
+    timestamp: "1 day ago",
+  },
+];
+
 export const VIDEO_DESCRIPTION: string = `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus esse tenetur eveniet, quae illo saepe ea magnam placeat in, laborum necessitatibus magni! Ex eveniet minus perferendis rem natus nihil ratione voluptatum error, enim omnis debitis, facere molestiae nulla excepturi expedita suscipit veritatis fuga quisquam itaque cupiditate, commodi similique officia. Itaque molestias veniam illo, atque aperiam cum expedita dolores numquam. Dolores voluptate quam est ea adipisci dicta. Est possimus dolorum dolores magnam ex aliquam excepturi quis velit saepe, recusandae deleniti, vitae dolore tempore architecto praesentium alias suscipit veniam expedita at amet repudiandae rerum. Optio, dolor! Culpa numquam recusandae necessitatibus molestiae voluptatum?`;
