@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { Link } from "react-router";
 import { VideoOverlay as InlineVideoOverlay } from "./components/InlineVideoCardComponents/VideoOverlay";
 import { VideoOverlay as BlockVideoOverlay } from "./components/BlockVideoCardComponents/VideoOverlay";
 import { VideoAuthor } from "./components/InlineVideoCardComponents/VideoAuthor";
@@ -17,45 +18,49 @@ const mockDescr =
 
 const InlineVideoCard: FC<{ video: Video }> = ({ video }) => {
   return (
-    <div className="cursor-pointer flex gap-4 w-full max-w-3xl">
-      <InlineVideoOverlay
-        thumbnailUrl={video.thumbnailUrl}
-        length={video.duration}
-      />
+    <Link to={{ pathname: "/watch", search: "?v=Qwm0VMGUFog" }}>
+      <div className="cursor-pointer flex gap-4 w-full max-w-3xl">
+        <InlineVideoOverlay
+          thumbnailUrl={video.thumbnailUrl}
+          length={video.duration}
+        />
 
-      <div className="flex flex-col justify-start gap-1">
-        <InlineVideoInfo
-          title={video.title}
-          views={video.views}
-          releaseDate={video.releaseDate}
-        />
-        <VideoAuthor
-          authorAvatarUrl={video.channelAvatarUrl}
-          authorName={video.channelName}
-        />
-        <div className="mt-2 w-full p text-gray-500 text-sm">
-          <p>{truncate(video.description!, mockDescr.length / 2)}</p>
+        <div className="flex flex-col justify-start gap-1">
+          <InlineVideoInfo
+            title={video.title}
+            views={video.views}
+            releaseDate={video.releaseDate}
+          />
+          <VideoAuthor
+            authorAvatarUrl={video.channelAvatarUrl}
+            authorName={video.channelName}
+          />
+          <div className="mt-2 w-full p text-gray-500 text-sm">
+            <p>{truncate(video.description!, mockDescr.length / 2)}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
 export const BlockVideoCard: FC<{ video: Video }> = ({ video }) => {
   return (
-    <div className="cursor-pointer w-72">
-      <BlockVideoOverlay
-        thumbnailUrl={video.thumbnailUrl}
-        length={video.duration}
-      />
-      <BlockVideoInfo
-        title={video.title}
-        views={video.views}
-        releaseDate={video.releaseDate}
-        authorAvatarUrl={video.channelAvatarUrl}
-        authorName={video.channelName}
-      />
-    </div>
+    <Link to={{ pathname: "/watch", search: "?v=Qwm0VMGUFog" }}>
+      <div className="cursor-pointer w-72">
+        <BlockVideoOverlay
+          thumbnailUrl={video.thumbnailUrl}
+          length={video.duration}
+        />
+        <BlockVideoInfo
+          title={video.title}
+          views={video.views}
+          releaseDate={video.releaseDate}
+          authorAvatarUrl={video.channelAvatarUrl}
+          authorName={video.channelName}
+        />
+      </div>
+    </Link>
   );
 };
 
