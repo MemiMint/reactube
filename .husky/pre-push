@@ -7,9 +7,11 @@ BRANCH_NAME_PATTERN="^(feature|bugfix|hotfix|chore|refactor|test)\/[0-9]+-[a-z0-
 # Get the current branch name
 CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
 
-if ["$branch_name" = "master"] || ["$branch_name" = "main"]; then
+# Allow pushing master or main without branch name check
+if [ "$CURRENT_BRANCH" = "master" ] || [ "$CURRENT_BRANCH" = "main" ]; then
   exit 0
 fi
+
 
 # Check if the branch name matches the pattern
 if ! echo "$CURRENT_BRANCH" | grep -Eq "$BRANCH_NAME_PATTERN"; then
